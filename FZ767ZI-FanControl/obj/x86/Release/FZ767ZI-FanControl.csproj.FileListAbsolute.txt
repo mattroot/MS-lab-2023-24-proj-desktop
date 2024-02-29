@@ -1,0 +1,20 @@
+C:\Users\SMCena\documents\visual studio 2010\Projects\FZ767ZI-FanControl\FZ767ZI-FanControl\bin\Release\FZ767ZI-FanControl.exe
+C:\Users\SMCena\documents\visual studio 2010\Projects\FZ767ZI-FanControl\FZ767ZI-FanControl\bin\Release\FZ767ZI-FanControl.pdb
+C:\Users\SMCena\documents\visual studio 2010\Projects\FZ767ZI-FanControl\FZ767ZI-FanControl\obj\x86\Release\FZ767ZI_FanControl.Form1.resources
+C:\Users\SMCena\documents\visual studio 2010\Projects\FZ767ZI-FanControl\FZ767ZI-FanControl\obj\x86\Release\FZ767ZI_FanControl.Properties.Resources.resources
+C:\Users\SMCena\documents\visual studio 2010\Projects\FZ767ZI-FanControl\FZ767ZI-FanControl\obj\x86\Release\FZ767ZI-FanControl.csproj.GenerateResource.Cache
+C:\Users\SMCena\documents\visual studio 2010\Projects\FZ767ZI-FanControl\FZ767ZI-FanControl\obj\x86\Release\FZ767ZI-FanControl.exe
+C:\Users\SMCena\documents\visual studio 2010\Projects\FZ767ZI-FanControl\FZ767ZI-FanControl\obj\x86\Release\FZ767ZI-FanControl.pdb
+C:\Users\SMCena\documents\visual studio 2010\Projects\FZ767ZI-FanControl\FZ767ZI-FanControl\obj\x86\Release\FZ767ZI_FanControl.FanStats.resources
+C:\Users\SMCena\documents\visual studio 2010\Projects\FZ767ZI-FanControl\FZ767ZI-FanControl\obj\x86\Release\FZ767ZI_FanControl.FanController.resources
+C:\Users\SMCena\documents\visual studio 2010\Projects\FZ767ZI-FanControl\FZ767ZI-FanControl\obj\x86\Release\FZ767ZI_FanControl.FanCalibrator.resources
+C:\Users\why\Desktop\FZ767ZI-FanControl\FZ767ZI-FanControl\bin\Release\FZ767ZI-FanControl.exe
+C:\Users\why\Desktop\FZ767ZI-FanControl\FZ767ZI-FanControl\bin\Release\FZ767ZI-FanControl.pdb
+C:\Users\why\Desktop\FZ767ZI-FanControl\FZ767ZI-FanControl\obj\x86\Release\FZ767ZI_FanControl.FanCalibrator.resources
+C:\Users\why\Desktop\FZ767ZI-FanControl\FZ767ZI-FanControl\obj\x86\Release\FZ767ZI_FanControl.FanController.resources
+C:\Users\why\Desktop\FZ767ZI-FanControl\FZ767ZI-FanControl\obj\x86\Release\FZ767ZI_FanControl.FanStats.resources
+C:\Users\why\Desktop\FZ767ZI-FanControl\FZ767ZI-FanControl\obj\x86\Release\FZ767ZI_FanControl.Form1.resources
+C:\Users\why\Desktop\FZ767ZI-FanControl\FZ767ZI-FanControl\obj\x86\Release\FZ767ZI_FanControl.Properties.Resources.resources
+C:\Users\why\Desktop\FZ767ZI-FanControl\FZ767ZI-FanControl\obj\x86\Release\FZ767ZI-FanControl.csproj.GenerateResource.Cache
+C:\Users\why\Desktop\FZ767ZI-FanControl\FZ767ZI-FanControl\obj\x86\Release\FZ767ZI-FanControl.exe
+C:\Users\why\Desktop\FZ767ZI-FanControl\FZ767ZI-FanControl\obj\x86\Release\FZ767ZI-FanControl.pdb
