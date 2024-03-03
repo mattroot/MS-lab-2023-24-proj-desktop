@@ -133,7 +133,7 @@ namespace F767ZI_FanControl
                             //}
                         //}
                     } catch (Exception x) {
-                        Console.WriteLine("zjebalo sie: \r\n" + x);
+                        Console.WriteLine("Exception catched: \r\n" + x);
                         //System.IO.File.AppendAllText("DEBUG.LOG", x.ToString() + "\r\n\r\n\r\n");
                     }
                 }

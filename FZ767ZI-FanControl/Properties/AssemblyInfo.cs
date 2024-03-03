@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("F767ZI-FanControl")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Control Panel for F767ZI-FanControl")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("mah mudda")]
 [assembly: AssemblyProduct("F767ZI-FanControl")]
-[assembly: AssemblyCopyright("Copyright ©  2024")]
+[assembly: AssemblyCopyright("GPL3 damnit")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

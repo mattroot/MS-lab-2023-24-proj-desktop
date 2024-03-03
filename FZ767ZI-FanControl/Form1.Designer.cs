@@ -28,8 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.fanCalibrator2 = new F767ZI_FanControl.FanCalibrator();
+            this.fanCalibrator1 = new F767ZI_FanControl.FanCalibrator();
+            this.fanController2 = new F767ZI_FanControl.FanController();
+            this.fanController1 = new F767ZI_FanControl.FanController();
+            this.fanStats2 = new F767ZI_FanControl.FanStats();
+            this.fanStats1 = new F767ZI_FanControl.FanStats();
             this.LBTemperature = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -62,12 +69,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.LBConnectionStatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.fanCalibrator2 = new F767ZI_FanControl.FanCalibrator();
-            this.fanCalibrator1 = new F767ZI_FanControl.FanCalibrator();
-            this.fanController2 = new F767ZI_FanControl.FanController();
-            this.fanController1 = new F767ZI_FanControl.FanController();
-            this.fanStats2 = new F767ZI_FanControl.FanStats();
-            this.fanStats1 = new F767ZI_FanControl.FanStats();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -105,6 +106,73 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Control";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // fanCalibrator2
+            // 
+            this.fanCalibrator2.CalibrationButtonEnabled = true;
+            this.fanCalibrator2.Location = new System.Drawing.Point(271, 354);
+            this.fanCalibrator2.MaxSpeed = 0;
+            this.fanCalibrator2.MinSpeed = 0;
+            this.fanCalibrator2.Name = "fanCalibrator2";
+            this.fanCalibrator2.Size = new System.Drawing.Size(225, 115);
+            this.fanCalibrator2.StartDuty = 0F;
+            this.fanCalibrator2.TabIndex = 2;
+            // 
+            // fanCalibrator1
+            // 
+            this.fanCalibrator1.CalibrationButtonEnabled = true;
+            this.fanCalibrator1.Location = new System.Drawing.Point(24, 354);
+            this.fanCalibrator1.MaxSpeed = 0;
+            this.fanCalibrator1.MinSpeed = 0;
+            this.fanCalibrator1.Name = "fanCalibrator1";
+            this.fanCalibrator1.Size = new System.Drawing.Size(225, 115);
+            this.fanCalibrator1.StartDuty = 0F;
+            this.fanCalibrator1.TabIndex = 2;
+            this.fanCalibrator1.Load += new System.EventHandler(this.fanCalibrator1_Load);
+            // 
+            // fanController2
+            // 
+            this.fanController2.IsSetModeEnabled = true;
+            this.fanController2.Location = new System.Drawing.Point(271, 206);
+            this.fanController2.MaxRPM = 3000;
+            this.fanController2.MinRPM = 0;
+            this.fanController2.Name = "fanController2";
+            this.fanController2.Size = new System.Drawing.Size(225, 142);
+            this.fanController2.TabIndex = 1;
+            // 
+            // fanController1
+            // 
+            this.fanController1.IsSetModeEnabled = true;
+            this.fanController1.Location = new System.Drawing.Point(24, 206);
+            this.fanController1.MaxRPM = 3000;
+            this.fanController1.MinRPM = 0;
+            this.fanController1.Name = "fanController1";
+            this.fanController1.Size = new System.Drawing.Size(225, 142);
+            this.fanController1.TabIndex = 1;
+            // 
+            // fanStats2
+            // 
+            this.fanStats2.DutyCycle = ((byte)(0));
+            this.fanStats2.FanName = "2";
+            this.fanStats2.Location = new System.Drawing.Point(271, 58);
+            this.fanStats2.Mode = "None";
+            this.fanStats2.Name = "fanStats2";
+            this.fanStats2.RequestedValue = 0;
+            this.fanStats2.Size = new System.Drawing.Size(225, 142);
+            this.fanStats2.Speed = 0;
+            this.fanStats2.TabIndex = 0;
+            // 
+            // fanStats1
+            // 
+            this.fanStats1.DutyCycle = ((byte)(0));
+            this.fanStats1.FanName = "1";
+            this.fanStats1.Location = new System.Drawing.Point(8, 58);
+            this.fanStats1.Mode = "None";
+            this.fanStats1.Name = "fanStats1";
+            this.fanStats1.RequestedValue = 0;
+            this.fanStats1.Size = new System.Drawing.Size(225, 142);
+            this.fanStats1.Speed = 0;
+            this.fanStats1.TabIndex = 0;
             // 
             // LBTemperature
             // 
@@ -468,71 +536,6 @@
             this.LBConnectionStatus.Size = new System.Drawing.Size(95, 17);
             this.LBConnectionStatus.Text = "Not connected...";
             // 
-            // fanCalibrator2
-            // 
-            this.fanCalibrator2.CalibrationButtonEnabled = true;
-            this.fanCalibrator2.Location = new System.Drawing.Point(271, 354);
-            this.fanCalibrator2.MaxSpeed = 0;
-            this.fanCalibrator2.MinSpeed = 0;
-            this.fanCalibrator2.Name = "fanCalibrator2";
-            this.fanCalibrator2.Size = new System.Drawing.Size(225, 115);
-            this.fanCalibrator2.TabIndex = 2;
-            // 
-            // fanCalibrator1
-            // 
-            this.fanCalibrator1.CalibrationButtonEnabled = true;
-            this.fanCalibrator1.Location = new System.Drawing.Point(24, 354);
-            this.fanCalibrator1.MaxSpeed = 0;
-            this.fanCalibrator1.MinSpeed = 0;
-            this.fanCalibrator1.Name = "fanCalibrator1";
-            this.fanCalibrator1.Size = new System.Drawing.Size(225, 115);
-            this.fanCalibrator1.TabIndex = 2;
-            this.fanCalibrator1.Load += new System.EventHandler(this.fanCalibrator1_Load);
-            // 
-            // fanController2
-            // 
-            this.fanController2.IsSetModeEnabled = true;
-            this.fanController2.Location = new System.Drawing.Point(271, 206);
-            this.fanController2.MaxRPM = 3000;
-            this.fanController2.MinRPM = 0;
-            this.fanController2.Name = "fanController2";
-            this.fanController2.Size = new System.Drawing.Size(225, 142);
-            this.fanController2.TabIndex = 1;
-            // 
-            // fanController1
-            // 
-            this.fanController1.IsSetModeEnabled = true;
-            this.fanController1.Location = new System.Drawing.Point(24, 206);
-            this.fanController1.MaxRPM = 3000;
-            this.fanController1.MinRPM = 0;
-            this.fanController1.Name = "fanController1";
-            this.fanController1.Size = new System.Drawing.Size(225, 142);
-            this.fanController1.TabIndex = 1;
-            // 
-            // fanStats2
-            // 
-            this.fanStats2.DutyCycle = ((byte)(0));
-            this.fanStats2.FanName = "2";
-            this.fanStats2.Location = new System.Drawing.Point(271, 58);
-            this.fanStats2.Mode = "None";
-            this.fanStats2.Name = "fanStats2";
-            this.fanStats2.RequestedValue = 0;
-            this.fanStats2.Size = new System.Drawing.Size(225, 142);
-            this.fanStats2.Speed = 0;
-            this.fanStats2.TabIndex = 0;
-            // 
-            // fanStats1
-            // 
-            this.fanStats1.DutyCycle = ((byte)(0));
-            this.fanStats1.FanName = "1";
-            this.fanStats1.Location = new System.Drawing.Point(8, 58);
-            this.fanStats1.Mode = "None";
-            this.fanStats1.Name = "fanStats1";
-            this.fanStats1.RequestedValue = 0;
-            this.fanStats1.Size = new System.Drawing.Size(225, 142);
-            this.fanStats1.Speed = 0;
-            this.fanStats1.TabIndex = 0;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -541,6 +544,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "F767ZI-FanControl - control panel";
