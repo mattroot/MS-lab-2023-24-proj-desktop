@@ -29,15 +29,17 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.LBMaxSpeed = new System.Windows.Forms.Label();
             this.LBMinSpeed = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.fanStartDutyLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.fanStartDutyLabel);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.LBMaxSpeed);
             this.groupBox1.Controls.Add(this.LBMinSpeed);
@@ -45,10 +47,20 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(225, 96);
+            this.groupBox1.Size = new System.Drawing.Size(225, 121);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Calibration";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(114, 19);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(105, 23);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Probe cal. data";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // LBMaxSpeed
             // 
@@ -78,14 +90,14 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // fanStartDutyLabel
             // 
-            this.button2.Location = new System.Drawing.Point(114, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(105, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Probe cal. data";
-            this.button2.UseVisualStyleBackColor = true;
+            this.fanStartDutyLabel.AutoSize = true;
+            this.fanStartDutyLabel.Location = new System.Drawing.Point(6, 92);
+            this.fanStartDutyLabel.Name = "fanStartDutyLabel";
+            this.fanStartDutyLabel.Size = new System.Drawing.Size(100, 13);
+            this.fanStartDutyLabel.TabIndex = 3;
+            this.fanStartDutyLabel.Text = "Start duty cycle: 0%";
             // 
             // FanCalibrator
             // 
@@ -93,7 +105,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
             this.Name = "FanCalibrator";
-            this.Size = new System.Drawing.Size(225, 96);
+            this.Size = new System.Drawing.Size(225, 121);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -107,5 +119,6 @@
         private System.Windows.Forms.Label LBMinSpeed;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label fanStartDutyLabel;
     }
 }

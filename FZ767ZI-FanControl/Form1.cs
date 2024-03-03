@@ -28,6 +28,8 @@ namespace FZ767ZI_FanControl
             CBHandshake.SelectedIndex = 0;
             fanCalibrator1.CalibrateClicked += new EventHandler(fanCalibrator1_CalibrateClicked);
             fanCalibrator2.CalibrateClicked += new EventHandler(fanCalibrator2_CalibrateClicked);
+            fanCalibrator1.EHGetCalibrationClicked += new EventHandler(fanCalibrator1_EHGetCalibrationClicked);
+            fanCalibrator2.EHGetCalibrationClicked += new EventHandler(fanCalibrator2_EHGetCalibrationClicked);
             api.Fan1CalibrationChanged += new EventHandler<CalibrationResultsEventArgs>(api_Fan1CalibrationChanged);
             api.Fan2CalibrationChanged += new EventHandler<CalibrationResultsEventArgs>(api_Fan2CalibrationChanged);
             api.Fan1ParametersChanged += api_Fan1ParametersChanged;
@@ -37,6 +39,16 @@ namespace FZ767ZI_FanControl
             api.SetAcknowledged += new EventHandler<ModeSetAcknowledgedEventArgs>(api_SetAcknowledged);
             api.Caller = this;
             EnableEverything(false);
+        }
+
+        void fanCalibrator2_EHGetCalibrationClicked(object sender, EventArgs e)
+        {
+            api.GetCalibration("fan2");
+        }
+
+        void fanCalibrator1_EHGetCalibrationClicked(object sender, EventArgs e)
+        {
+            api.GetCalibration("fan1");
         }
 
         void api_SetAcknowledged(object sender, ModeSetAcknowledgedEventArgs e)
@@ -60,30 +72,41 @@ namespace FZ767ZI_FanControl
         
 
         void EnableEverything(bool enable) {
-            // fanCalibrator1.CalibrationButtonEnabled = enable;
-            fanCalibrator1.Enabled = enable;
-            // fanCalibrator2.CalibrationButtonEnabled = enable;
-            fanCalibrator2.Enabled = enable;
-            fanController1.IsSetModeEnabled = enable;
-            fanController2.IsSetModeEnabled = enable;
+            //// fanCalibrator1.CalibrationButtonEnabled = enable;
+            //fanCalibrator1.Enabled = enable;
+            //// fanCalibrator2.CalibrationButtonEnabled = enable;
+            //fanCalibrator2.Enabled = enable;
+            //fanController1.IsSetModeEnabled = enable;
+            //fanController2.IsSetModeEnabled = enable;
+            return;
         }
 
         void api_Fan2CalibrationChanged(object sender, CalibrationResultsEventArgs e)
         {
-            fanCalibrator2.MinSpeed = e.MinSpeed;
-            fanCalibrator2.MaxSpeed = e.MaxSpeed;
-            fanController2.MaxRPM = e.MaxSpeed;
-            fanController2.MinRPM = e.MinSpeed;
-            EnableEverything(true);
+            if (!this.IsDisposed)
+                this.Invoke((Action)delegate
+                {
+                    fanCalibrator2.MinSpeed = e.MinSpeed;
+                    fanCalibrator2.MaxSpeed = e.MaxSpeed;
+                    fanCalibrator2.StartDuty = e.StartDuty;
+                    fanController2.MaxRPM = e.MaxSpeed;
+                    fanController2.MinRPM = e.MinSpeed;
+                    EnableEverything(true);
+                });
         }
 
         void api_Fan1CalibrationChanged(object sender, CalibrationResultsEventArgs e)
         {
-            fanCalibrator1.MinSpeed = e.MinSpeed;
-            fanCalibrator1.MaxSpeed = e.MaxSpeed;
-            fanController1.MaxRPM = e.MaxSpeed;
-            fanController1.MinRPM = e.MinSpeed;
-            EnableEverything(true);
+            if (!this.IsDisposed)
+                this.Invoke((Action)delegate
+                {
+                    fanCalibrator1.MinSpeed = e.MinSpeed;
+                    fanCalibrator1.MaxSpeed = e.MaxSpeed;
+                    fanCalibrator1.StartDuty = e.StartDuty;
+                    fanController1.MaxRPM = e.MaxSpeed;
+                    fanController1.MinRPM = e.MinSpeed;
+                    EnableEverything(true);
+                });
         }
 
         public string Status { get; set; }
@@ -104,6 +127,8 @@ namespace FZ767ZI_FanControl
                     return "C. Min. Spd";
                 case PWM_FAN_CTRL_MODE.PWM_FAN_CALIBRATION_MAX_SPEED:
                     return "C. Max. Spd";
+                case PWM_FAN_CTRL_MODE.PWM_FAN_CALIBRATION_START_DUTY:
+                    return "C. Strt Duty";
                 default:
                     return "ERROR";
             }
@@ -111,62 +136,64 @@ namespace FZ767ZI_FanControl
         }
         void api_Fan2ParametersChanged(object sender, FanParametersChangedEventArgs e)
         {
-            this.Invoke((Action)delegate
-            {
-                FanDetails fd = e.Parameters;
-                fanStats2.Speed = fd.CurrentSpeed;
-                fanStats2.RequestedValue = fd.TargetSpeed;
-                fanStats2.Mode = ModeToFriendlyName(fd.Mode);
-                fanStats2.DutyCycle = (byte)fd.DutyCycle;
-                LBTemperature.Text = api.Temperature.ToString("0.00") + " °C";
-            });
+            if (!this.IsDisposed)
+                this.Invoke((Action)delegate
+                {
+                    FanDetails fd = e.Parameters;
+                    fanStats2.Speed = fd.CurrentSpeed;
+                    fanStats2.RequestedValue = fd.TargetSpeed;
+                    fanStats2.Mode = ModeToFriendlyName(fd.Mode);
+                    fanStats2.DutyCycle = (byte)fd.DutyCycle;
+                    LBTemperature.Text = api.Temperature.ToString("0.00") + " °C";
+                });
         }
 
         void api_Fan1ParametersChanged(object sender, FanParametersChangedEventArgs e)
         {
-            this.Invoke((Action)delegate
-            {
-                FanDetails fd = e.Parameters;
-                fanStats1.Speed = fd.CurrentSpeed;
-                fanStats1.RequestedValue = fd.TargetSpeed;
-                fanStats1.Mode = ModeToFriendlyName(fd.Mode);
-                fanStats1.DutyCycle = (byte)fd.DutyCycle;
-                LBTemperature.Text = api.Temperature.ToString("0.00") + " °C";
-            });
+            if (!this.IsDisposed)
+                this.Invoke((Action)delegate
+                {
+                    FanDetails fd = e.Parameters;
+                    fanStats1.Speed = fd.CurrentSpeed;
+                    fanStats1.RequestedValue = fd.TargetSpeed;
+                    fanStats1.Mode = ModeToFriendlyName(fd.Mode);
+                    fanStats1.DutyCycle = (byte)fd.DutyCycle;
+                    LBTemperature.Text = api.Temperature.ToString("0.00") + " °C";
+                });
         }
 
         void fanCalibrator1_CalibrateClicked(object sender, EventArgs e)
         {
             api.ScheduleCalibration("fan1");
-            EnableEverything(false);
+            //EnableEverything(false);
         }
 
         void fanCalibrator2_CalibrateClicked(object sender, EventArgs e)
         {
             api.ScheduleCalibration("fan2");
-            EnableEverything(false);
+            //EnableEverything(false);
         }
 
         FanControllerApi api = new FanControllerApi();
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            api.EnableTelemetry(false);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            api.ResetDevice();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            api.ResetDisplay();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            api.EnableTelemetry(true);
         }
 
         private void BConnect_Click_1(object sender, EventArgs e)
@@ -209,6 +236,16 @@ namespace FZ767ZI_FanControl
             BConnect.Enabled = true;
             LBConnectionStatus.Text = "Disconnected...";
             EnableEverything(false);
+        }
+
+        private void RawSerialPostButton_Click(object sender, EventArgs e)
+        {
+            api.PostRaw(rawCommandTextBox.Text);
+        }
+
+        private void fanCalibrator1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

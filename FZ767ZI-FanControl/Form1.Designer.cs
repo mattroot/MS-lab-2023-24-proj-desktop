@@ -30,18 +30,12 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.fanCalibrator2 = new FZ767ZI_FanControl.FanCalibrator();
-            this.fanCalibrator1 = new FZ767ZI_FanControl.FanCalibrator();
-            this.fanController2 = new FZ767ZI_FanControl.FanController();
-            this.fanController1 = new FZ767ZI_FanControl.FanController();
-            this.fanStats2 = new FZ767ZI_FanControl.FanStats();
-            this.fanStats1 = new FZ767ZI_FanControl.FanStats();
             this.LBTemperature = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.COMCmdGroupBox = new System.Windows.Forms.GroupBox();
             this.RawSerialPostButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.rawCommandTextBox = new System.Windows.Forms.TextBox();
             this.DevDebugGroupBox = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -68,6 +62,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.LBConnectionStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.fanCalibrator2 = new FZ767ZI_FanControl.FanCalibrator();
+            this.fanCalibrator1 = new FZ767ZI_FanControl.FanCalibrator();
+            this.fanController2 = new FZ767ZI_FanControl.FanController();
+            this.fanController1 = new FZ767ZI_FanControl.FanController();
+            this.fanStats2 = new FZ767ZI_FanControl.FanStats();
+            this.fanStats1 = new FZ767ZI_FanControl.FanStats();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -85,7 +85,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(512, 502);
+            this.tabControl1.Size = new System.Drawing.Size(512, 530);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -101,74 +101,10 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(504, 476);
+            this.tabPage1.Size = new System.Drawing.Size(504, 504);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Control";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // fanCalibrator2
-            // 
-            this.fanCalibrator2.CalibrationButtonEnabled = true;
-            this.fanCalibrator2.Location = new System.Drawing.Point(271, 354);
-            this.fanCalibrator2.MaxSpeed = 0;
-            this.fanCalibrator2.MinSpeed = 0;
-            this.fanCalibrator2.Name = "fanCalibrator2";
-            this.fanCalibrator2.Size = new System.Drawing.Size(225, 96);
-            this.fanCalibrator2.TabIndex = 2;
-            // 
-            // fanCalibrator1
-            // 
-            this.fanCalibrator1.CalibrationButtonEnabled = true;
-            this.fanCalibrator1.Location = new System.Drawing.Point(24, 354);
-            this.fanCalibrator1.MaxSpeed = 0;
-            this.fanCalibrator1.MinSpeed = 0;
-            this.fanCalibrator1.Name = "fanCalibrator1";
-            this.fanCalibrator1.Size = new System.Drawing.Size(225, 96);
-            this.fanCalibrator1.TabIndex = 2;
-            // 
-            // fanController2
-            // 
-            this.fanController2.IsSetModeEnabled = true;
-            this.fanController2.Location = new System.Drawing.Point(271, 206);
-            this.fanController2.MaxRPM = 3000;
-            this.fanController2.MinRPM = 0;
-            this.fanController2.Name = "fanController2";
-            this.fanController2.Size = new System.Drawing.Size(225, 142);
-            this.fanController2.TabIndex = 1;
-            // 
-            // fanController1
-            // 
-            this.fanController1.IsSetModeEnabled = true;
-            this.fanController1.Location = new System.Drawing.Point(24, 206);
-            this.fanController1.MaxRPM = 3000;
-            this.fanController1.MinRPM = 0;
-            this.fanController1.Name = "fanController1";
-            this.fanController1.Size = new System.Drawing.Size(225, 142);
-            this.fanController1.TabIndex = 1;
-            // 
-            // fanStats2
-            // 
-            this.fanStats2.DutyCycle = ((byte)(0));
-            this.fanStats2.FanName = "2";
-            this.fanStats2.Location = new System.Drawing.Point(271, 58);
-            this.fanStats2.Mode = "None";
-            this.fanStats2.Name = "fanStats2";
-            this.fanStats2.RequestedValue = 0;
-            this.fanStats2.Size = new System.Drawing.Size(225, 142);
-            this.fanStats2.Speed = 0;
-            this.fanStats2.TabIndex = 0;
-            // 
-            // fanStats1
-            // 
-            this.fanStats1.DutyCycle = ((byte)(0));
-            this.fanStats1.FanName = "1";
-            this.fanStats1.Location = new System.Drawing.Point(8, 58);
-            this.fanStats1.Mode = "None";
-            this.fanStats1.Name = "fanStats1";
-            this.fanStats1.RequestedValue = 0;
-            this.fanStats1.Size = new System.Drawing.Size(225, 142);
-            this.fanStats1.Speed = 0;
-            this.fanStats1.TabIndex = 0;
             // 
             // LBTemperature
             // 
@@ -197,7 +133,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(504, 476);
+            this.tabPage2.Size = new System.Drawing.Size(504, 504);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Connection";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -205,7 +141,7 @@
             // COMCmdGroupBox
             // 
             this.COMCmdGroupBox.Controls.Add(this.RawSerialPostButton);
-            this.COMCmdGroupBox.Controls.Add(this.textBox1);
+            this.COMCmdGroupBox.Controls.Add(this.rawCommandTextBox);
             this.COMCmdGroupBox.Location = new System.Drawing.Point(11, 393);
             this.COMCmdGroupBox.Name = "COMCmdGroupBox";
             this.COMCmdGroupBox.Size = new System.Drawing.Size(485, 52);
@@ -221,13 +157,14 @@
             this.RawSerialPostButton.TabIndex = 19;
             this.RawSerialPostButton.Text = "POST";
             this.RawSerialPostButton.UseVisualStyleBackColor = true;
+            this.RawSerialPostButton.Click += new System.EventHandler(this.RawSerialPostButton_Click);
             // 
-            // textBox1
+            // rawCommandTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(392, 20);
-            this.textBox1.TabIndex = 0;
+            this.rawCommandTextBox.Location = new System.Drawing.Point(6, 19);
+            this.rawCommandTextBox.Name = "rawCommandTextBox";
+            this.rawCommandTextBox.Size = new System.Drawing.Size(392, 20);
+            this.rawCommandTextBox.TabIndex = 0;
             // 
             // DevDebugGroupBox
             // 
@@ -519,7 +456,7 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.LBConnectionStatus});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 480);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 508);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(512, 22);
             this.statusStrip1.TabIndex = 1;
@@ -531,11 +468,76 @@
             this.LBConnectionStatus.Size = new System.Drawing.Size(95, 17);
             this.LBConnectionStatus.Text = "Not connected...";
             // 
+            // fanCalibrator2
+            // 
+            this.fanCalibrator2.CalibrationButtonEnabled = true;
+            this.fanCalibrator2.Location = new System.Drawing.Point(271, 354);
+            this.fanCalibrator2.MaxSpeed = 0;
+            this.fanCalibrator2.MinSpeed = 0;
+            this.fanCalibrator2.Name = "fanCalibrator2";
+            this.fanCalibrator2.Size = new System.Drawing.Size(225, 115);
+            this.fanCalibrator2.TabIndex = 2;
+            // 
+            // fanCalibrator1
+            // 
+            this.fanCalibrator1.CalibrationButtonEnabled = true;
+            this.fanCalibrator1.Location = new System.Drawing.Point(24, 354);
+            this.fanCalibrator1.MaxSpeed = 0;
+            this.fanCalibrator1.MinSpeed = 0;
+            this.fanCalibrator1.Name = "fanCalibrator1";
+            this.fanCalibrator1.Size = new System.Drawing.Size(225, 115);
+            this.fanCalibrator1.TabIndex = 2;
+            this.fanCalibrator1.Load += new System.EventHandler(this.fanCalibrator1_Load);
+            // 
+            // fanController2
+            // 
+            this.fanController2.IsSetModeEnabled = true;
+            this.fanController2.Location = new System.Drawing.Point(271, 206);
+            this.fanController2.MaxRPM = 3000;
+            this.fanController2.MinRPM = 0;
+            this.fanController2.Name = "fanController2";
+            this.fanController2.Size = new System.Drawing.Size(225, 142);
+            this.fanController2.TabIndex = 1;
+            // 
+            // fanController1
+            // 
+            this.fanController1.IsSetModeEnabled = true;
+            this.fanController1.Location = new System.Drawing.Point(24, 206);
+            this.fanController1.MaxRPM = 3000;
+            this.fanController1.MinRPM = 0;
+            this.fanController1.Name = "fanController1";
+            this.fanController1.Size = new System.Drawing.Size(225, 142);
+            this.fanController1.TabIndex = 1;
+            // 
+            // fanStats2
+            // 
+            this.fanStats2.DutyCycle = ((byte)(0));
+            this.fanStats2.FanName = "2";
+            this.fanStats2.Location = new System.Drawing.Point(271, 58);
+            this.fanStats2.Mode = "None";
+            this.fanStats2.Name = "fanStats2";
+            this.fanStats2.RequestedValue = 0;
+            this.fanStats2.Size = new System.Drawing.Size(225, 142);
+            this.fanStats2.Speed = 0;
+            this.fanStats2.TabIndex = 0;
+            // 
+            // fanStats1
+            // 
+            this.fanStats1.DutyCycle = ((byte)(0));
+            this.fanStats1.FanName = "1";
+            this.fanStats1.Location = new System.Drawing.Point(8, 58);
+            this.fanStats1.Mode = "None";
+            this.fanStats1.Name = "fanStats1";
+            this.fanStats1.RequestedValue = 0;
+            this.fanStats1.Size = new System.Drawing.Size(225, 142);
+            this.fanStats1.Speed = 0;
+            this.fanStats1.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(512, 502);
+            this.ClientSize = new System.Drawing.Size(512, 530);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -597,7 +599,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button RawSerialPostButton;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox rawCommandTextBox;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;

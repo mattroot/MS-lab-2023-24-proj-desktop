@@ -24,6 +24,7 @@ namespace FZ767ZI_FanControl
         public event EventHandler CalibrateClicked;
         private int _minSpeed = 0;
         private int _maxSpeed = 0;
+        private float _startDuty = 0F;
         public int MinSpeed { 
             get{
                 return _minSpeed;
@@ -52,6 +53,25 @@ namespace FZ767ZI_FanControl
             set
             {
                 button1.Enabled = value;
+            }
+        }
+        public event EventHandler EHGetCalibrationClicked;
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (EHGetCalibrationClicked != null)
+                EHGetCalibrationClicked(this, EventArgs.Empty);
+        }
+
+        public float StartDuty
+        {
+            get
+            {
+                return _startDuty;
+            }
+            set
+            {
+                _startDuty = value;
+                fanStartDutyLabel.Text = "Start duty cycle: " + value.ToString() + "%";
             }
         }
 
