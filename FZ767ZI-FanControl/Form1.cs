@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO.Ports;
 
-namespace FZ767ZI_FanControl
+namespace F767ZI_FanControl
 {
     public partial class Form1 : Form
     {
@@ -38,6 +38,7 @@ namespace FZ767ZI_FanControl
             fanController2.ModeChanged += new EventHandler<FanModeChangedEventArgs>(fanController2_ModeChanged);
             api.SetAcknowledged += new EventHandler<ModeSetAcknowledgedEventArgs>(api_SetAcknowledged);
             api.Caller = this;
+
             EnableEverything(false);
         }
 
@@ -226,6 +227,10 @@ namespace FZ767ZI_FanControl
             LBConnectionStatus.Text = "Connected to " + portName + "...";
             CBDisconnect.Enabled = true;
             BConnect.Enabled = false;
+            //if (api.Fan1Details.Mode == PWM_FAN_CTRL_MODE.PWM_FAN_DIRECT | api.Fan1Details.Mode == PWM_FAN_CTRL_MODE.PWM_FAN_PCONTROL)
+            //    api.GetCalibration("fan1");
+            //if (api.Fan2Details.Mode == PWM_FAN_CTRL_MODE.PWM_FAN_DIRECT | api.Fan2Details.Mode == PWM_FAN_CTRL_MODE.PWM_FAN_PCONTROL)
+            //    api.GetCalibration("fan2");
             EnableEverything(true);
         }
 

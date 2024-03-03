@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace FZ767ZI_FanControl
+namespace F767ZI_FanControl
 {
     public partial class FanStats : UserControl
     {

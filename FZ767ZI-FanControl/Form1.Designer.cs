@@ -1,4 +1,4 @@
-﻿namespace FZ767ZI_FanControl
+﻿namespace F767ZI_FanControl
 {
     partial class Form1
     {
@@ -62,12 +62,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.LBConnectionStatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.fanCalibrator2 = new FZ767ZI_FanControl.FanCalibrator();
-            this.fanCalibrator1 = new FZ767ZI_FanControl.FanCalibrator();
-            this.fanController2 = new FZ767ZI_FanControl.FanController();
-            this.fanController1 = new FZ767ZI_FanControl.FanController();
-            this.fanStats2 = new FZ767ZI_FanControl.FanStats();
-            this.fanStats1 = new FZ767ZI_FanControl.FanStats();
+            this.fanCalibrator2 = new F767ZI_FanControl.FanCalibrator();
+            this.fanCalibrator1 = new F767ZI_FanControl.FanCalibrator();
+            this.fanController2 = new F767ZI_FanControl.FanController();
+            this.fanController1 = new F767ZI_FanControl.FanController();
+            this.fanStats2 = new F767ZI_FanControl.FanStats();
+            this.fanStats1 = new F767ZI_FanControl.FanStats();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();

@@ -8,7 +8,7 @@ using System.Text;
 using System.IO.Ports;
 
 
-namespace FZ767ZI_FanControl
+namespace F767ZI_FanControl
 {
     public class FanControllerApi
     {

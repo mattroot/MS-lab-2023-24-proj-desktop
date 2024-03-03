@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace FZ767ZI_FanControl
+namespace F767ZI_FanControl
 {
     public class CalibrationResultsEventArgs : EventArgs
     {

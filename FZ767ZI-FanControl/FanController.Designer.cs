@@ -1,4 +1,4 @@
-﻿namespace FZ767ZI_FanControl
+﻿namespace F767ZI_FanControl
 {
     partial class FanController
     {
