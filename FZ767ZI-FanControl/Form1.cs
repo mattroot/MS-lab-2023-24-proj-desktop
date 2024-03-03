@@ -60,8 +60,10 @@ namespace FZ767ZI_FanControl
         
 
         void EnableEverything(bool enable) {
-            fanCalibrator1.CalibrationButtonEnabled = enable;
-            fanCalibrator2.CalibrationButtonEnabled = enable;
+            // fanCalibrator1.CalibrationButtonEnabled = enable;
+            fanCalibrator1.Enabled = enable;
+            // fanCalibrator2.CalibrationButtonEnabled = enable;
+            fanCalibrator2.Enabled = enable;
             fanController1.IsSetModeEnabled = enable;
             fanController2.IsSetModeEnabled = enable;
         }
@@ -145,11 +147,29 @@ namespace FZ767ZI_FanControl
             EnableEverything(false);
         }
 
-        
-
         FanControllerApi api = new FanControllerApi();
 
-        private void BConnect_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BConnect_Click_1(object sender, EventArgs e)
         {
             if (api.IsConnected)
             {
@@ -162,14 +182,27 @@ namespace FZ767ZI_FanControl
             Parity parity = (Parity)CBParity.SelectedIndex;
             StopBits stopBits = (StopBits)(CBStopBits.SelectedIndex + 1);
             Handshake handshake = (Handshake)CBHandshake.SelectedIndex;
-            api.Connect(portName, baudRate, dataBits, parity, stopBits, handshake);
+            try
+            {
+                api.Connect(portName, baudRate, dataBits, parity, stopBits, handshake);
+            }
+            catch (UnauthorizedAccessException exc)
+            {
+                System.Windows.Forms.MessageBox.Show(
+                    String.Format("Permission denied while connecting to {0}. Please make sure the serial port is not in use.", portName),
+                    "Error",
+                    System.Windows.Forms.MessageBoxButtons.OK,
+                    System.Windows.Forms.MessageBoxIcon.Error
+                );
+                return;
+            }
             LBConnectionStatus.Text = "Connected to " + portName + "...";
             CBDisconnect.Enabled = true;
             BConnect.Enabled = false;
             EnableEverything(true);
         }
 
-        private void CBDisconnect_Click(object sender, EventArgs e)
+        private void CBDisconnect_Click_1(object sender, EventArgs e)
         {
             CBDisconnect.Enabled = false;
             api.Disconnect();

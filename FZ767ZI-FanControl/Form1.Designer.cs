@@ -39,6 +39,19 @@
             this.LBTemperature = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.COMCmdGroupBox = new System.Windows.Forms.GroupBox();
+            this.RawSerialPostButton = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.DevDebugGroupBox = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.COMDetailsGroupBox = new System.Windows.Forms.GroupBox();
             this.CBDisconnect = new System.Windows.Forms.Button();
             this.BConnect = new System.Windows.Forms.Button();
             this.CBHandshake = new System.Windows.Forms.ComboBox();
@@ -58,6 +71,9 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.COMCmdGroupBox.SuspendLayout();
+            this.DevDebugGroupBox.SuspendLayout();
+            this.COMDetailsGroupBox.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -175,20 +191,9 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.CBDisconnect);
-            this.tabPage2.Controls.Add(this.BConnect);
-            this.tabPage2.Controls.Add(this.CBHandshake);
-            this.tabPage2.Controls.Add(this.CBStopBits);
-            this.tabPage2.Controls.Add(this.CBDataBits);
-            this.tabPage2.Controls.Add(this.CBParity);
-            this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Controls.Add(this.CBBaudRate);
-            this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Controls.Add(this.CBSerialPortNumber);
-            this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Controls.Add(this.label1);
+            this.tabPage2.Controls.Add(this.COMCmdGroupBox);
+            this.tabPage2.Controls.Add(this.DevDebugGroupBox);
+            this.tabPage2.Controls.Add(this.COMDetailsGroupBox);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -197,26 +202,169 @@
             this.tabPage2.Text = "Connection";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // COMCmdGroupBox
+            // 
+            this.COMCmdGroupBox.Controls.Add(this.RawSerialPostButton);
+            this.COMCmdGroupBox.Controls.Add(this.textBox1);
+            this.COMCmdGroupBox.Location = new System.Drawing.Point(11, 393);
+            this.COMCmdGroupBox.Name = "COMCmdGroupBox";
+            this.COMCmdGroupBox.Size = new System.Drawing.Size(485, 52);
+            this.COMCmdGroupBox.TabIndex = 2;
+            this.COMCmdGroupBox.TabStop = false;
+            this.COMCmdGroupBox.Text = "Send raw serial command";
+            // 
+            // RawSerialPostButton
+            // 
+            this.RawSerialPostButton.Location = new System.Drawing.Point(404, 16);
+            this.RawSerialPostButton.Name = "RawSerialPostButton";
+            this.RawSerialPostButton.Size = new System.Drawing.Size(75, 23);
+            this.RawSerialPostButton.TabIndex = 19;
+            this.RawSerialPostButton.Text = "POST";
+            this.RawSerialPostButton.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(6, 19);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(392, 20);
+            this.textBox1.TabIndex = 0;
+            // 
+            // DevDebugGroupBox
+            // 
+            this.DevDebugGroupBox.Controls.Add(this.button4);
+            this.DevDebugGroupBox.Controls.Add(this.button3);
+            this.DevDebugGroupBox.Controls.Add(this.button2);
+            this.DevDebugGroupBox.Controls.Add(this.button1);
+            this.DevDebugGroupBox.Controls.Add(this.label11);
+            this.DevDebugGroupBox.Controls.Add(this.label10);
+            this.DevDebugGroupBox.Controls.Add(this.label9);
+            this.DevDebugGroupBox.Controls.Add(this.label4);
+            this.DevDebugGroupBox.Location = new System.Drawing.Point(11, 233);
+            this.DevDebugGroupBox.Name = "DevDebugGroupBox";
+            this.DevDebugGroupBox.Size = new System.Drawing.Size(485, 140);
+            this.DevDebugGroupBox.TabIndex = 1;
+            this.DevDebugGroupBox.TabStop = false;
+            this.DevDebugGroupBox.Text = "Device debugging";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(167, 107);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 7;
+            this.button4.Text = "TEL,1";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(167, 79);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "TEL,0";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(167, 51);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "RSD";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(167, 23);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "RST";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(13, 112);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(122, 13);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Enable telemetry posting";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(13, 84);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(124, 13);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Disable telemetry posting";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(13, 56);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(111, 13);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Reinitialize I2C display";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 28);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(154, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Perform soft reset of the device";
+            // 
+            // COMDetailsGroupBox
+            // 
+            this.COMDetailsGroupBox.Controls.Add(this.CBDisconnect);
+            this.COMDetailsGroupBox.Controls.Add(this.BConnect);
+            this.COMDetailsGroupBox.Controls.Add(this.CBHandshake);
+            this.COMDetailsGroupBox.Controls.Add(this.CBStopBits);
+            this.COMDetailsGroupBox.Controls.Add(this.CBDataBits);
+            this.COMDetailsGroupBox.Controls.Add(this.CBParity);
+            this.COMDetailsGroupBox.Controls.Add(this.label8);
+            this.COMDetailsGroupBox.Controls.Add(this.CBBaudRate);
+            this.COMDetailsGroupBox.Controls.Add(this.label7);
+            this.COMDetailsGroupBox.Controls.Add(this.CBSerialPortNumber);
+            this.COMDetailsGroupBox.Controls.Add(this.label6);
+            this.COMDetailsGroupBox.Controls.Add(this.label5);
+            this.COMDetailsGroupBox.Controls.Add(this.label2);
+            this.COMDetailsGroupBox.Controls.Add(this.label1);
+            this.COMDetailsGroupBox.Location = new System.Drawing.Point(8, 6);
+            this.COMDetailsGroupBox.Name = "COMDetailsGroupBox";
+            this.COMDetailsGroupBox.Size = new System.Drawing.Size(488, 220);
+            this.COMDetailsGroupBox.TabIndex = 0;
+            this.COMDetailsGroupBox.TabStop = false;
+            this.COMDetailsGroupBox.Text = "Connection details";
+            // 
             // CBDisconnect
             // 
             this.CBDisconnect.Enabled = false;
-            this.CBDisconnect.Location = new System.Drawing.Point(423, 172);
+            this.CBDisconnect.Location = new System.Drawing.Point(407, 182);
             this.CBDisconnect.Name = "CBDisconnect";
             this.CBDisconnect.Size = new System.Drawing.Size(75, 23);
-            this.CBDisconnect.TabIndex = 4;
+            this.CBDisconnect.TabIndex = 17;
             this.CBDisconnect.Text = "Disconnect";
             this.CBDisconnect.UseVisualStyleBackColor = true;
-            this.CBDisconnect.Click += new System.EventHandler(this.CBDisconnect_Click);
+            this.CBDisconnect.Click += new System.EventHandler(this.CBDisconnect_Click_1);
             // 
             // BConnect
             // 
-            this.BConnect.Location = new System.Drawing.Point(342, 172);
+            this.BConnect.Location = new System.Drawing.Point(326, 182);
             this.BConnect.Name = "BConnect";
             this.BConnect.Size = new System.Drawing.Size(75, 23);
-            this.BConnect.TabIndex = 4;
+            this.BConnect.TabIndex = 18;
             this.BConnect.Text = "Connect";
             this.BConnect.UseVisualStyleBackColor = true;
-            this.BConnect.Click += new System.EventHandler(this.BConnect_Click);
+            this.BConnect.Click += new System.EventHandler(this.BConnect_Click_1);
             // 
             // CBHandshake
             // 
@@ -227,10 +375,10 @@
             "XOnXOff",
             "RequestToSend",
             "RequestToSendXOnXOff"});
-            this.CBHandshake.Location = new System.Drawing.Point(71, 145);
+            this.CBHandshake.Location = new System.Drawing.Point(63, 155);
             this.CBHandshake.Name = "CBHandshake";
-            this.CBHandshake.Size = new System.Drawing.Size(427, 21);
-            this.CBHandshake.TabIndex = 2;
+            this.CBHandshake.Size = new System.Drawing.Size(419, 21);
+            this.CBHandshake.TabIndex = 13;
             // 
             // CBStopBits
             // 
@@ -240,10 +388,10 @@
             "1",
             "2",
             "1.5"});
-            this.CBStopBits.Location = new System.Drawing.Point(71, 118);
+            this.CBStopBits.Location = new System.Drawing.Point(63, 128);
             this.CBStopBits.Name = "CBStopBits";
-            this.CBStopBits.Size = new System.Drawing.Size(427, 21);
-            this.CBStopBits.TabIndex = 2;
+            this.CBStopBits.Size = new System.Drawing.Size(419, 21);
+            this.CBStopBits.TabIndex = 16;
             // 
             // CBDataBits
             // 
@@ -251,10 +399,10 @@
             this.CBDataBits.FormattingEnabled = true;
             this.CBDataBits.Items.AddRange(new object[] {
             "8"});
-            this.CBDataBits.Location = new System.Drawing.Point(71, 91);
+            this.CBDataBits.Location = new System.Drawing.Point(63, 101);
             this.CBDataBits.Name = "CBDataBits";
-            this.CBDataBits.Size = new System.Drawing.Size(427, 21);
-            this.CBDataBits.TabIndex = 2;
+            this.CBDataBits.Size = new System.Drawing.Size(419, 21);
+            this.CBDataBits.TabIndex = 14;
             // 
             // CBParity
             // 
@@ -266,18 +414,18 @@
             "Even",
             "Mark",
             "Space"});
-            this.CBParity.Location = new System.Drawing.Point(71, 64);
+            this.CBParity.Location = new System.Drawing.Point(63, 74);
             this.CBParity.Name = "CBParity";
-            this.CBParity.Size = new System.Drawing.Size(427, 21);
-            this.CBParity.TabIndex = 2;
+            this.CBParity.Size = new System.Drawing.Size(419, 21);
+            this.CBParity.TabIndex = 12;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(8, 149);
+            this.label8.Location = new System.Drawing.Point(0, 159);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(65, 13);
-            this.label8.TabIndex = 0;
+            this.label8.TabIndex = 10;
             this.label8.Text = "Handshake:";
             // 
             // CBBaudRate
@@ -308,63 +456,63 @@
             "460800",
             "576000",
             "921600"});
-            this.CBBaudRate.Location = new System.Drawing.Point(71, 36);
+            this.CBBaudRate.Location = new System.Drawing.Point(63, 46);
             this.CBBaudRate.Name = "CBBaudRate";
-            this.CBBaudRate.Size = new System.Drawing.Size(427, 21);
-            this.CBBaudRate.TabIndex = 2;
+            this.CBBaudRate.Size = new System.Drawing.Size(419, 21);
+            this.CBBaudRate.TabIndex = 15;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(8, 122);
+            this.label7.Location = new System.Drawing.Point(0, 132);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(51, 13);
-            this.label7.TabIndex = 0;
+            this.label7.TabIndex = 5;
             this.label7.Text = "Stop bits:";
             // 
             // CBSerialPortNumber
             // 
             this.CBSerialPortNumber.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBSerialPortNumber.FormattingEnabled = true;
-            this.CBSerialPortNumber.Location = new System.Drawing.Point(71, 9);
+            this.CBSerialPortNumber.Location = new System.Drawing.Point(63, 19);
             this.CBSerialPortNumber.Name = "CBSerialPortNumber";
-            this.CBSerialPortNumber.Size = new System.Drawing.Size(427, 21);
-            this.CBSerialPortNumber.TabIndex = 1;
+            this.CBSerialPortNumber.Size = new System.Drawing.Size(419, 21);
+            this.CBSerialPortNumber.TabIndex = 11;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 95);
+            this.label6.Location = new System.Drawing.Point(0, 105);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 13);
-            this.label6.TabIndex = 0;
+            this.label6.TabIndex = 7;
             this.label6.Text = "Data bits:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 69);
+            this.label5.Location = new System.Drawing.Point(0, 79);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(36, 13);
-            this.label5.TabIndex = 0;
+            this.label5.TabIndex = 9;
             this.label5.Text = "Parity:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 39);
+            this.label2.Location = new System.Drawing.Point(0, 49);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 13);
-            this.label2.TabIndex = 0;
+            this.label2.TabIndex = 8;
             this.label2.Text = "Baud rate:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 12);
+            this.label1.Location = new System.Drawing.Point(0, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 6;
             this.label1.Text = "Serial port:";
             // 
             // statusStrip1
@@ -393,13 +541,18 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "FZ767ZI Fan Control";
+            this.Text = "F767ZI-FanControl - control panel";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.COMCmdGroupBox.ResumeLayout(false);
+            this.COMCmdGroupBox.PerformLayout();
+            this.DevDebugGroupBox.ResumeLayout(false);
+            this.DevDebugGroupBox.PerformLayout();
+            this.COMDetailsGroupBox.ResumeLayout(false);
+            this.COMDetailsGroupBox.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -414,11 +567,6 @@
         private System.Windows.Forms.Label LBTemperature;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button BConnect;
-        private System.Windows.Forms.ComboBox CBBaudRate;
-        private System.Windows.Forms.ComboBox CBSerialPortNumber;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private FanStats fanStats2;
         private FanStats fanStats1;
         private FanController fanController1;
@@ -427,15 +575,33 @@
         private FanCalibrator fanCalibrator1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel LBConnectionStatus;
-        private System.Windows.Forms.ComboBox CBParity;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.GroupBox COMCmdGroupBox;
+        private System.Windows.Forms.GroupBox DevDebugGroupBox;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox COMDetailsGroupBox;
+        private System.Windows.Forms.Button CBDisconnect;
+        private System.Windows.Forms.Button BConnect;
+        private System.Windows.Forms.ComboBox CBHandshake;
         private System.Windows.Forms.ComboBox CBStopBits;
         private System.Windows.Forms.ComboBox CBDataBits;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox CBHandshake;
+        private System.Windows.Forms.ComboBox CBParity;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button CBDisconnect;
+        private System.Windows.Forms.ComboBox CBBaudRate;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox CBSerialPortNumber;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button RawSerialPostButton;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }
 
