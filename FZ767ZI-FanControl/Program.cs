@@ -17,7 +17,12 @@ namespace F767ZI_FanControl
         [STAThread]
         static void Main(string[] args)
         {
-            if (args.Length != 0 && args[0] == "/NOCONSOLE") {
+            if (args.Length != 0 && args[0] == "/CONSOLE")
+            {
+                ShowWindow(GetConsoleWindow(), 1);
+            }
+            else
+            {
                 ShowWindow(GetConsoleWindow(), 0);
             }
             Application.EnableVisualStyles();
